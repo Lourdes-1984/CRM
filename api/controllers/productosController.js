@@ -146,7 +146,7 @@ exports.actualizarProducto = async (req, res, next) => {
 exports.eliminarProducto = async(req,res,next) =>{
     try {
         await Productos.findOneAndDelete({_id : req.params.idProducto});
-        res.json({mensaje:'El producto se ha eliminado'})
+        res.json({mensaje:'El producto se ha eliminado correctamente'})
         console.log(error)
     } catch (error) {
         next()
