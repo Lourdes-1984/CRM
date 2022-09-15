@@ -22,7 +22,7 @@ router.delete('/clientes/:idCliente', clienteController.eliminarCliente);
 //**PRODUCTOS */
 //agregar nuevo producto
 router.post('/productos', productosController.subirArchivo, productosController.nuevoProducto);
-//mostrar nuevo producto
+//mostrar nuevos producto
 router.get('/productos', productosController.mostrarProductos);
 //mostrar un producto por su ID en especifico
 router.get('/productos/:idProducto', productosController.mostrarProducto);
@@ -38,7 +38,9 @@ router.get('/pedidos', pedidosController.mostrarPedidos);
 //mostrar un pedido por su ID
 router.get('/pedidos/:idPedido', pedidosController.mostrarPedido);
 //actualizar pedido
-router.put('/pedidos/:idPedido', pedidosController.actualizarPedido)
+router.put('/pedidos/:idPedido', pedidosController.actualizarPedido);
+//eliminar un pedido
+router.delete('/pedidos/:idPedido', pedidosController.eliminarPedido)
 
 
     

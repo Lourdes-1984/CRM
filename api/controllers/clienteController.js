@@ -43,7 +43,7 @@ exports.actualizarCliente = async(req, res, next)=>{
         const cliente = await Clientes.findByIdAndUpdate({_id:req.params.idCliente},req.body,{
             new: true
         });
-        res.json(cliente);
+        res.json({mensaje: 'Se actualizo datos de cliente',cliente} );
     } catch (error) {
         console.log(error)
         next();

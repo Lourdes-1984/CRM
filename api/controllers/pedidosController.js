@@ -37,7 +37,7 @@ exports.mostrarPedido = async(req,res,next)=>{
     //mostrar pedido
     res.json(pedido);
 }
-// Actualizar el pedido via ID
+// Actualizar el pedido por su ID
 exports.actualizarPedido = async (req, res, next) => {
     try {
         let pedido = await Pedidos.findOneAndUpdate({_id : req.params.idPedido}, req.body, {
@@ -51,7 +51,16 @@ exports.actualizarPedido = async (req, res, next) => {
         console.log( req.params.idPedido)
         res.json({mensaje:'pedido actualizado', pedido})
     } catch (error) {
-        console.log('nose puedo actualizar el pedido', error);
+        console.log('no se puedo actualizar el pedido', error);
         next();
+    }
+},
+exports.eliminarPedido = async (req, res, next) =>{
+    try {
+        await Pedidos.findOneAndDelete({_id : req.params.idPedido});
+        res.json({mensaje:'El pedido se ha eliminado correctamente'})
+        console.log(error)
+    } catch (error) {
+        next()
     }
 }
