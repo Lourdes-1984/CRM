@@ -1,18 +1,25 @@
 const express = require('express');
-const cors = require('cors');
-const routers = require('./routers')
-
+//const cors = require('cors');
+const routers = require('./routers');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser')
+//conectar mongo
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://localhost/crm',{
+    useNewUrlParser:true
+})
 
 // creamos el servidor
 const app = express();
 
 // habilitar el pasero de datos
-app.use(express.urlencoded({extended: true}));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(express.json());
 // habilitar cors para aceptar petidiones de otras url
 
-app.use(cors());
+//app.use(cors());
 // rutas del servidor
 
 app.use('/', routers());
