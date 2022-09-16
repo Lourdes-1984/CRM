@@ -1,14 +1,31 @@
-import './App.css';
-import {NavBar} from './components/navBar/NavBar'
+import React, { Fragment } from "react";
+/**ROUTING */
+
+/** LAYOUT */
+import Header from "./components/layout/Header";
+import NavBar from "./components/layout/NavBar";
+/**COMPONENTES */
+import Clientes from "./components/clientes/Clientes";
+import Pedidos from "./components/pedidos/Pedidos";
+import Productos from "./components/productos/Productos";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <NavBar />
-        <h1>este es el inicio</h1>
-      </header>
-    </div>
+    <Router>
+      <Fragment>
+        <Header />
+        <div class="grid contenedor contenido-principal">
+          <NavBar />
+          <main class="caja-contenido col-9">
+            <Switch>
+              <Route exact path="/" component={Clientes} />
+              <Route exact path="/productos" component={Productos} />
+              <Route exact path="/pedidos" component={Pedidos} />
+            </Switch>
+          </main>
+        </div>
+      </Fragment>
+    </Router>
   );
 }
 
