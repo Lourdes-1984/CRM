@@ -1,6 +1,6 @@
-import React, { Fragment } from "react";
+import React from "react";
 /**ROUTING */
-
+import { BrowserRouter, Routes, Route,} from "react-router-dom";
 /** LAYOUT */
 import Header from "./components/layout/Header";
 import NavBar from "./components/layout/NavBar";
@@ -11,21 +11,21 @@ import Productos from "./components/productos/Productos";
 
 function App() {
   return (
-    <Router>
-      <Fragment>
+    <BrowserRouter>
+      <>
         <Header />
-        <div class="grid contenedor contenido-principal">
+        <div className="grid contenedor contenido-principal">
           <NavBar />
-          <main class="caja-contenido col-9">
-            <Switch>
-              <Route exact path="/" component={Clientes} />
-              <Route exact path="/productos" component={Productos} />
-              <Route exact path="/pedidos" component={Pedidos} />
-            </Switch>
+          <main className="caja-contenido col-9">
+            <Routes>
+              <Route exact path="/" element={<Clientes />} />
+                <Route exact path="productos" element={<Productos />} />
+                <Route exact path="pedidos" element={<Pedidos />} />
+            </Routes>
           </main>
         </div>
-      </Fragment>
-    </Router>
+      </>
+    </BrowserRouter>
   );
 }
 
