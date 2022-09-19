@@ -4,11 +4,11 @@ const Schema = mongoose.Schema;
 const clientesSchema = new Schema({
     nombre:{
         type:String,
-        trim:true
+        
     },
     apellido:{
         type:String,
-        trim:true
+       
     },
     email:{
         type:String,
@@ -18,7 +18,7 @@ const clientesSchema = new Schema({
     },
     empresa:{
         type:String,
-        trim:true
+       
 
     },
     telefono:{

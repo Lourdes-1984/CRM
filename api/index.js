@@ -1,8 +1,11 @@
 const express = require('express');
-//const cors = require('cors');
 const routers = require('./routers');
 const mongoose = require('mongoose');
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
+
+//cors permite que un cliente se conecte a otro servidor para el interca,bio de recursos
+const cors = require('cors');
+
 //conectar mongo
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/crm',{
@@ -12,19 +15,19 @@ mongoose.connect('mongodb://localhost/crm',{
 // creamos el servidor
 const app = express();
 
-// habilitar el pasero de datos
+// habilitar el parseo de datos
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(express.json());
+
 // habilitar cors para aceptar petidiones de otras url
+app.use(cors());
 
-//app.use(cors());
 // rutas del servidor
-
 app.use('/', routers());
-//puerto
 
+//puerto
 app.listen(4000, () => {
     console.log('servidor corriendo en el puerto: 4000');
 })

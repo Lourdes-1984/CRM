@@ -12,7 +12,7 @@ exports.nuevoCliente = async (req,res, next) =>{
        })
    } catch (error) {
        //si hay un error,console.log y next
-       console.log('hubo un error al crear al cliente', error);
+      res.send(error)
        next();
    }
 }

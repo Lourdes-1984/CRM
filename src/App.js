@@ -6,8 +6,11 @@ import Header from "./components/layout/Header";
 import NavBar from "./components/layout/NavBar";
 /**COMPONENTES */
 import Clientes from "./components/clientes/Clientes";
+import NuevoCliente from './components/clientes/NuevoCliente';
+
 import Pedidos from "./components/pedidos/Pedidos";
 import Productos from "./components/productos/Productos";
+
 
 function App() {
   return (
@@ -19,6 +22,9 @@ function App() {
           <main className="caja-contenido col-9">
             <Routes>
               <Route exact path="/" element={<Clientes />} />
+              <Route exact path="/clientes/nuevo" element={<NuevoCliente />} />
+
+
                 <Route exact path="productos" element={<Productos />} />
                 <Route exact path="pedidos" element={<Pedidos />} />
             </Routes>
