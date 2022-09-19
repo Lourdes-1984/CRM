@@ -4,6 +4,8 @@ import clienteAxios from '../config/axios.js';
 import Cliente from './Cliente';
 
 import { Link } from "react-router-dom";
+import Spinner from '../layout/Spinner'
+
 
 
 function Clientes(){
@@ -23,6 +25,8 @@ function Clientes(){
      }
         consultarAPI();
     }, [clientes]);
+    //spinner de carga
+if(!clientes.length) return <Spinner/>
     return(
         <Fragment>
             <h2> Clientes</h2>
@@ -34,12 +38,8 @@ function Clientes(){
                     <Cliente key= {cliente._id} cliente = {cliente}
                     />
                 )
-                   
                 )}
-
             </ul>
-           
-        
         </Fragment>
     )
 }

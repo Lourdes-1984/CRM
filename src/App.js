@@ -5,13 +5,17 @@ import { BrowserRouter, Routes, Route,} from "react-router-dom";
 import Header from "./components/layout/Header";
 import NavBar from "./components/layout/NavBar";
 /**COMPONENTES */
+//CLIENTES
 import Clientes from "./components/clientes/Clientes";
 import NuevoCliente from './components/clientes/NuevoCliente';
 import EditarCliente from './components/clientes/EditarCliente';
-
-
-import Pedidos from "./components/pedidos/Pedidos";
+//PRODUCTOS
 import Productos from "./components/productos/Productos";
+import EditarProducto from "./components/productos/EditarProducto";
+import NuevoProducto from "./components/productos/NuevoProducto";
+//PEDIDOS
+import Pedidos from "./components/pedidos/Pedidos";
+
 
 
 function App() {
@@ -30,6 +34,9 @@ function App() {
 
 
                 <Route exact path="productos" element={<Productos />} />
+                <Route exact path="/productos/nuevo" element={<NuevoProducto />} />
+                <Route exact path="/productos/editar/:id" element={<EditarProducto/>} />
+
                 <Route exact path="pedidos" element={<Pedidos />} />
             </Routes>
           </main>

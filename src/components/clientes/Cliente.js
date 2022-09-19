@@ -32,6 +32,7 @@ function Cliente({cliente}) {
         }
       })
    }
+   
   return (
     <li className="cliente">
     <div className="info-cliente">
