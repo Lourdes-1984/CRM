@@ -8,7 +8,7 @@ exports.nuevoCliente = async (req,res, next) =>{
        //almacena el registro
        await cliente.save()
        res.json({
-           mensaje:'se agrego nuevo cliente'
+           mensaje:'Se agrego nuevo cliente'
        })
    } catch (error) {
        //si hay un error,console.log y next
@@ -45,7 +45,7 @@ exports.actualizarCliente = async(req, res, next)=>{
         });
         res.json({mensaje: 'Se actualizo datos de cliente',cliente} );
     } catch (error) {
-        console.log(error)
+       res.send(error)
         next();
     }
 }
@@ -53,7 +53,7 @@ exports.actualizarCliente = async(req, res, next)=>{
 exports.eliminarCliente = async(req,res,next) =>{
     try {
        await Clientes.findOneAndDelete({_id: req.params.idCliente});
-        res.json({mensaje:'El cliente se ha elimanado'})
+        res.json({mensaje:'El cliente se ha eliminado'})
     } catch (error) {
         console.log(error)
         next()

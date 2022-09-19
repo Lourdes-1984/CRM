@@ -10,18 +10,19 @@ function Clientes(){
     //trabajar con el  state
     //clientes = state guardarClientes = funcion para guardar el state
     const [clientes, guardarClientes] = useState([])
-    //query a la api
-    const consultarAPI = async ()=>{
-       const clientesConsulta = await clienteAxios.get('/clientes');
-
-       //colocar el resultado en el state
-       guardarClientes( clientesConsulta.data)
-
-      
-    }
+    
     useEffect(()=>{
+        //query a la api
+    const consultarAPI = async ()=>{
+        const clientesConsulta = await clienteAxios.get('/clientes');
+ 
+        //colocar el resultado en el state
+        guardarClientes( clientesConsulta.data)
+ 
+       
+     }
         consultarAPI();
-    }, []);
+    }, [clientes]);
     return(
         <Fragment>
             <h2> Clientes</h2>

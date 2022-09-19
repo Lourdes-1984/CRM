@@ -1,7 +1,12 @@
 import React, {Fragment, useState}  from 'react';
-import clienteAxios from '../config/axios'
+import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
+import clienteAxios from '../config/axios';
+
+
 
 function NuevoCliente() {
+    const navigate = useNavigate();
     //cliente = state guadarCliente = funcion para guardad el state
         const [cliente, guardarClientes]= useState({
             nombre:'',
@@ -28,11 +33,26 @@ function NuevoCliente() {
                 //enviar peticion
                 clienteAxios.post('/clientes', cliente)
                 .then(res=>{
-                    //validar si error en momgo
+                    //validar si hay error en momgo
                     if(res.data.code ===11000){
-                        console.log('Eroor de duplicado de mongo')
+                        Swal.fire({
+                            type:'error',
+                            title:'Hubo un error',
+                            text:'El cliente ya existe'
+                        })
                     }
-                    console.log(res)
+                    else{
+                        Swal.fire(
+                            'Se agrego nuevo cliente!',
+                            res.data.mensaje,
+                            'success'
+                          )
+                    }
+                    setTimeout(()=>{
+                        //REDIRECCIONAR
+                   navigate('/');
+                    },1000)
+                   
                 });
             }
               
@@ -86,5 +106,6 @@ function NuevoCliente() {
    </Fragment>
   )
 }
-
-export default NuevoCliente
+//HOC higherOrderComponent =componente de order superior
+// un componente de orden superior es una función que toma un componente y devuelve un nuevo componente.
+export default NuevoCliente;
