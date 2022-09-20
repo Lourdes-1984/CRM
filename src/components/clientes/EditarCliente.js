@@ -24,7 +24,6 @@ function EditarCliente() {
         const consultarAPI = async ()=>{
             const clienteConsulta = await clienteAxios.get(`/clientes/${id}`)
             console.log(clienteConsulta.data)
-
             //colocar en el state
             datosCliente(clienteConsulta.data)
         }

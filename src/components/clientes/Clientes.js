@@ -2,7 +2,6 @@ import React, {Fragment, useEffect, useState}from 'react';
 //importar cliente axios
 import clienteAxios from '../config/axios.js';
 import Cliente from './Cliente';
-
 import { Link } from "react-router-dom";
 import Spinner from '../layout/Spinner'
 
