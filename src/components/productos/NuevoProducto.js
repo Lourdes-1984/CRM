@@ -57,8 +57,6 @@ try {
  }
 
 }
-
-
 //leer los datos del formulario
 const leerInfoProducto = e =>{
   //almacenar lo que el usuario escribe en el state

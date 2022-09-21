@@ -1,6 +1,6 @@
 import React from "react";
 /**ROUTING */
-import { BrowserRouter, Routes, Route,} from "react-router-dom";
+import { BrowserRouter, Routes, Route, Router,} from "react-router-dom";
 /** LAYOUT */
 import Header from "./components/layout/Header";
 import NavBar from "./components/layout/NavBar";
@@ -15,8 +15,7 @@ import EditarProducto from "./components/productos/EditarProducto";
 import NuevoProducto from "./components/productos/NuevoProducto";
 //PEDIDOS
 import Pedidos from "./components/pedidos/Pedidos";
-
-
+import NuevoPedido from "./components/pedidos/NuevoPedido";
 
 function App() {
   return (
@@ -31,13 +30,12 @@ function App() {
               <Route exact path="/clientes/nuevo" element={<NuevoCliente />} />
               <Route exact path="/clientes/editar/:id" element={<EditarCliente />} />
 
-
-
                 <Route exact path="productos" element={<Productos />} />
                 <Route exact path="/productos/nuevo" element={<NuevoProducto />} />
                 <Route exact path="/productos/editar/:id" element={<EditarProducto/>} />
 
                 <Route exact path="pedidos" element={<Pedidos />} />
+                <Route exact path="/pedidos/nuevo/:id" element={<NuevoPedido/>} />
             </Routes>
           </main>
         </div>

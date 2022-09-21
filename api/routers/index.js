@@ -19,6 +19,7 @@ router.get('/clientes/:idCliente', clienteController.mostrarCliente);
 router.put('/clientes/:idCliente', clienteController.actualizarCliente);
 //eliminar cliente por DELETE
 router.delete('/clientes/:idCliente', clienteController.eliminarCliente);
+
 //**PRODUCTOS */
 //agregar nuevo producto
 router.post('/productos', productosController.subirArchivo, productosController.nuevoProducto);
@@ -30,6 +31,8 @@ router.get('/productos/:idProducto', productosController.mostrarProducto);
 router.put('/productos/:idProducto', productosController.subirArchivo, productosController.actualizarProducto);
 //eliminar producto
 router.delete('/productos/:idProducto', productosController.eliminarProducto);
+//buscar un producto
+router.post('/productos/busqueda/:query', productosController.buscarProducto)
 //**PEDIDOS */
 //agrega nuevo pedido
 router.post('/pedidos', pedidosController.nuevoPedido);

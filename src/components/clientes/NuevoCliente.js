@@ -23,10 +23,7 @@ function NuevoCliente() {
             ...cliente,
             [e.target.name]  : e.target.value
             })
-  
-
         }
-        
             //añade a la API un cliente nuevo
             const AgregarCliente = e =>{
                 e.preventDefault();
@@ -55,8 +52,6 @@ function NuevoCliente() {
                    
                 });
             }
-              
-        
         //validar el formulario
         const validarCliente=() =>{
             //DESTRUCTURANDO

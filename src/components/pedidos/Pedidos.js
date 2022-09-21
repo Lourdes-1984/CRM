@@ -1,9 +1,12 @@
-import React from 'react'
+import React, {useEffect,useState,Fragment} from 'react';
+
 
 function Pedidos() {
   return (
-    <h2>Pedidos</h2>
-  )
-}
-
+    <Fragment>
+       <h2>Pedidos</h2>
+    </Fragment>
+    )
+  }
+  
 export default Pedidos;

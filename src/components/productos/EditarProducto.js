@@ -11,7 +11,6 @@ function EditarProducto() {
    //obtener el id
    const {id} = useParams();
    const navigate = useNavigate();
-   console.log(id)
    //producto = state , guardarProducto= funcion para actualizar
    const[producto , guardarProducto]= useState({
       nombre: '',
@@ -23,12 +22,9 @@ function EditarProducto() {
 
    //archivo = state, guardarArchivo = setState
 const [archivo, guardarArchivo]= useState('');
-
    //QUERY A LA API para traer el producto a editar
    const consultarAPI = async ()=>{
     const productoConsulta = await clienteAxios.get(`/productos/${id}`)
-    console.log(productoConsulta.data)
-
     //colocar en el state
     guardarProducto(productoConsulta.data)
 }
