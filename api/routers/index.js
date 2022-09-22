@@ -35,7 +35,7 @@ router.delete('/productos/:idProducto', productosController.eliminarProducto);
 router.post('/productos/busqueda/:query', productosController.buscarProducto)
 //**PEDIDOS */
 //agrega nuevo pedido
-router.post('/pedidos', pedidosController.nuevoPedido);
+router.post('/pedidos/nuevo/:idUsuario', pedidosController.nuevoPedido);
 //mostrar todos los pedidos
 router.get('/pedidos', pedidosController.mostrarPedidos);
 //mostrar un pedido por su ID

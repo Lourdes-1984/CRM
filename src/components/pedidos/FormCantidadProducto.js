@@ -1,20 +1,22 @@
-import React, { Fragment } from "react";
+import React from "react";
 
-function FormCantidadProducto() {
+function FormCantidadProducto(props) {
+  const {producto, restarProducto, aumentarProducto, eliminarProductoPedido,index}= props;
   return (
       <li>
-        <div class="texto-producto">
-          <p class="nombre">Macbook Pro</p>
-          <p class="precio">$250</p>
+        <div className="texto-producto">
+          <p className="nombre">{producto.nombre}</p>
+          <p className="precio">${producto.precio}</p>
         </div>
-        <div class="acciones">
-          <div class="contenedor-cantidad">
-            <i class="fas fa-minus"></i>
-            <input type="text" name="cantidad" />
-            <i class="fas fa-plus"></i>
+        <div className="acciones">
+          <div className="contenedor-cantidad">
+            <i className="fas fa-minus" onClick={() => restarProducto(index)}></i>
+            <p>{producto.cantidad}</p>
+            {/* <input type="text" name="cantidad" /> */}
+            <i className="fas fa-plus"  onClick={() => aumentarProducto(index)}></i>
           </div>
-          <button type="button" class="btn btn-rojo">
-            <i class="fas fa-minus-circle"></i>
+          <button type="button" className="btn btn-rojo" onClick={() => eliminarProductoPedido(producto.producto)}> {/*o producto._id*/}
+            <i className="fas fa-minus-circle"></i>
             Eliminar Producto
           </button>
         </div>
