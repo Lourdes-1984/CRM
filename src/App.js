@@ -1,6 +1,6 @@
 import React from "react";
 /**ROUTING */
-import { BrowserRouter, Routes, Route, Router,} from "react-router-dom";
+import { BrowserRouter, Routes, Route, } from "react-router-dom";
 /** LAYOUT */
 import Header from "./components/layout/Header";
 import NavBar from "./components/layout/NavBar";
@@ -16,6 +16,9 @@ import NuevoProducto from "./components/productos/NuevoProducto";
 //PEDIDOS
 import Pedidos from "./components/pedidos/Pedidos";
 import NuevoPedido from "./components/pedidos/NuevoPedido";
+//LOGIN
+import Login  from "./components/auth/Login"
+
 
 function App() {
   return (
@@ -36,6 +39,9 @@ function App() {
 
                 <Route exact path="pedidos" element={<Pedidos />} />
                 <Route exact path="/pedidos/nuevo/:id" element={<NuevoPedido/>} />
+
+                <Route exact path="/iniciar-sesion" element={<Login/>}/>
+
             </Routes>
           </main>
         </div>

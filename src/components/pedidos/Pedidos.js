@@ -12,7 +12,7 @@ function Pedidos() {
     };
     //llamar a la api
     consultarAPI();
-  }, []); 
+  }, [pedidos]); 
 
   return (
     <Fragment>

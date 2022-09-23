@@ -2,7 +2,8 @@ const express = require('express');
 const router = express.Router();
 const clienteController = require('../controllers/clienteController');
 const productosController = require('../controllers/productosController');
-const pedidosController = require('../controllers/pedidosController')
+const pedidosController = require('../controllers/pedidosController');
+const usuariosController = require('../controllers/usuariosControllers')
 
 
 
@@ -32,7 +33,8 @@ router.put('/productos/:idProducto', productosController.subirArchivo, productos
 //eliminar producto
 router.delete('/productos/:idProducto', productosController.eliminarProducto);
 //buscar un producto
-router.post('/productos/busqueda/:query', productosController.buscarProducto)
+router.post('/productos/busqueda/:query', productosController.buscarProducto);
+
 //**PEDIDOS */
 //agrega nuevo pedido
 router.post('/pedidos/nuevo/:idUsuario', pedidosController.nuevoPedido);
@@ -43,7 +45,13 @@ router.get('/pedidos/:idPedido', pedidosController.mostrarPedido);
 //actualizar pedido
 router.put('/pedidos/:idPedido', pedidosController.actualizarPedido);
 //eliminar un pedido
-router.delete('/pedidos/:idPedido', pedidosController.eliminarPedido)
+router.delete('/pedidos/:idPedido', pedidosController.eliminarPedido);
+
+//**USUARIOS */
+//agregar un usuario
+router.post('/crear-cuenta', usuariosController.registrarUsuario);
+//inicio de sesion
+router.post('/iniciar-sesion',usuariosController.autenticarUsuario)
 
 
     
