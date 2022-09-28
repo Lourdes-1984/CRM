@@ -30,7 +30,7 @@ exports.autenticarUsuario = async (req, res, next)=>{
         if(!bcrypt.compareSync(password, usuario.password)){
             //si el password es incorrecto
             await res.status(401).json({mensaje: 'Password incorrecto'});
-            netx();
+            next();
         }else{
             //si el password es correcto crear el token
             const token = jwt.sign({

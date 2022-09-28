@@ -2,13 +2,14 @@ const express = require('express');
 const routers = require('./routers');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+require('dotenv').config();
 
 //cors permite que un cliente se conecte a otro servidor para el interca,bio de recursos
 const cors = require('cors');
 
 //conectar mongo
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/crm',{
+mongoose.connect(process.env.DB_URL,{
     useNewUrlParser:true
 })
 
@@ -18,6 +19,22 @@ const app = express();
 // habilitar el parseo de datos
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+
+//Definir un dominio(s) para reciobir peticiones
+const whitelist = [process.env.FRONTEND_URL];
+// const corsOptions = {
+//     origin: (origin , callback)=>{
+//         console.log(origin)
+//         //revisar si la peticion viene de un servisor que esta en whitelist
+//         const existe = whitelist.some(dominio => dominio === origin);
+//         if(existe){
+//             callback(null ,true);
+//         }else{
+//             callback(new Error('No permitido por CORS'));
+//         }
+
+//     }
+// }
 
 app.use(express.json());
 

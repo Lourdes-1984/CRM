@@ -4,7 +4,7 @@ import Swal from 'sweetalert2';
 
 function DetallePedido(props) {
   const { cliente, pedido  } = props;
-
+  const idPedido = pedido[0]._id;
  //eliminar un pedido
  const eliminarPedido = id => {
   Swal.fire({
@@ -34,7 +34,6 @@ function DetallePedido(props) {
       }
     })
  }
-console.log(pedido._id)
   return (
     <Fragment>
       <ul className="listado-pedidos">
@@ -60,7 +59,7 @@ console.log(pedido._id)
             <p className="total">Total: ${props.total} </p>
           </div>
           <div className="acciones">
-          <button    onClick={() => eliminarPedido(pedido._id)}  
+          <button    onClick={() => eliminarPedido(idPedido)}  
             type="button" className="btn btn-rojo btn-eliminar"><i className="fas fa-times"></i> Eliminar Pedido</button>
           </div>
         </li>

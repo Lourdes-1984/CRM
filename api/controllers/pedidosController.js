@@ -54,13 +54,14 @@ exports.actualizarPedido = async (req, res, next) => {
         console.log('no se puedo actualizar el pedido', error);
         next();
     }
-},
+};
 exports.eliminarPedido = async (req, res, next) =>{
+    console.log( req.params.idPedido)
     try {
         await Pedidos.findOneAndDelete({_id : req.params.idPedido});
         res.json({mensaje:'El pedido se ha eliminado correctamente'})
-        console.log(error)
     } catch (error) {
-        next()
+        console.log(error)
+        next();
     }
-}
+};

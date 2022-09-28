@@ -12,15 +12,15 @@ function Pedidos() {
     };
     //llamar a la api
     consultarAPI();
-  }, [pedidos]); 
+  }, []); 
 
   return (
     <Fragment>
       <h2>Pedidos</h2>
       <ul className="listado-pedidos">  
-        {pedidos.map((pedido) => (
+        {pedidos.length ? pedidos.map((pedido) => (
           <DetallePedido key={pedido._id} {...pedido} />
-        ))}
+        )) : <p>No hay pedidos</p>}
       </ul>
     </Fragment>
   );
