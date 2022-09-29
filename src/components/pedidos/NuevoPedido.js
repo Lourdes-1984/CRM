@@ -28,7 +28,7 @@ function NuevoPedido(){
 
         //actualizar el total
         actualizarTotal()
-    },[productos]);
+    });
 
         const buscarProducto = async e =>{
             e.preventDefault();
@@ -42,7 +42,7 @@ function NuevoPedido(){
                 productoResultado.cantidad = 0;
                 //poner en el state
                 guardarProductos([...productos, productoResultado]);
-                console.log(productoResultado)
+            
             }
             else{
                 //no hay resultado
@@ -73,20 +73,21 @@ function NuevoPedido(){
             //almacenarlo en el state
             guardarProductos(todosLosProductos);
         };
+        const aumentarProducto = i =>{
+            //copiar el arreglo original de productos
+            const todosLosProductos = [...productos]
+            //incremento
+            todosLosProductos[i].cantidad++;
+             //almacenarlo en el state
+           guardarProductos(todosLosProductos);
+       };
 
             //ELIMINAR PRODUCTO DEL STATE
         const eliminarProductoPedido= id =>{
             const  todosLosProductos = productos.filter(producto => producto.producto !== id)
             guardarProductos(todosLosProductos)
         }
-        const aumentarProducto = i =>{
-             //copiar el arreglo original de productos
-             const todosLosProductos = [...productos]
-             //incremento
-             todosLosProductos[i].cantidad++;
-              //almacenarlo en el state
-            guardarProductos(todosLosProductos);
-        };
+       
         //ACTUALIZAR  EL TOTAL A PAGAR
         const actualizarTotal = ()=>{
             //si el arreglo de productos es igual a 0: es total es 0 
@@ -137,7 +138,7 @@ function NuevoPedido(){
            //redireccionar
            setTimeout(()=>{
             //REDIRECCIONAR
-       navigate('/pedidos');
+       navigate('/');
         },1000)
         }
     return(

@@ -1,16 +1,13 @@
 import React, {Fragment, useState , useEffect}  from 'react';
-import { useParams } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
  import Swal from 'sweetalert2';
  import clienteAxios from '../config/axios';
-
-
 
 function EditarCliente() {
     //obtener el id
     const {id} = useParams();
     const navigate = useNavigate();
-    console.log(id)
+   
     
     //cliente = state guadarCliente = funcion para guardad el state
         const [cliente, datosCliente]= useState({
@@ -23,14 +20,15 @@ function EditarCliente() {
         //QUERY A LA API
         const consultarAPI = async ()=>{
             const clienteConsulta = await clienteAxios.get(`/clientes/${id}`)
-            console.log(clienteConsulta.data)
+           
             //colocar en el state
-            datosCliente(clienteConsulta.data)
+            datosCliente(clienteConsulta.data);
         }
         //useEffect , cuando el componente carga
         useEffect(() =>{
-            consultarAPI()
-        },[])
+            consultarAPI();
+        }, [] )
+
         //leer los datos del formulario
         const actualizarState = e =>{
             //almacenar lo que el usuario escribe en el state
@@ -48,7 +46,7 @@ function EditarCliente() {
             clienteAxios.put(`/clientes/${cliente._id}`,cliente)
             .then(res =>{
                 //validar si hay error en momgo
-                if(res.data.code ===11000){
+                if(res.data.code === 11000){
                     Swal.fire({
                         type:'error',
                         title:'Hubo un error',

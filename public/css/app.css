@@ -3,11 +3,11 @@
     --fontHeading: 'Staatliches', cursive;
 
     /** Colores **/
-    --azul : #00487C;
+    --azul : #12f1c4;
     --rojo : #A01C48;
     --naranja : #F58549;
     --amarillo: #ECA400;
-    --verde : rgb(20, 131, 20);
+    --verde : rgb(102, 222, 102);
 
     /** gris **/
     --gris: #969696;
@@ -442,7 +442,7 @@ h3.resumen-titulo {
     max-width: 520px;
     margin: 15rem  auto 0 auto;
     padding: 4rem 2rem;
-    background-color: var(--grisClaro);
+    background-color: var(--azul);
     border-radius: 1.5rem;
 }
 .login h2 {

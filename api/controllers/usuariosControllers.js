@@ -2,6 +2,7 @@ const Usuarios = require('../models/Usuarios');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 
+//CREAR UN USUARIO
 exports.registrarUsuario = async (req,res)=>{
     //leeer los datos del usuario y colocarlo  en usuarios
     const usuario = new Usuarios(req.body);
@@ -15,6 +16,7 @@ exports.registrarUsuario = async (req,res)=>{
     }
 
 }
+//AUTENTICAR UN USURAIO
 exports.autenticarUsuario = async (req, res, next)=>{
     //buscar el usuario
     const{email,password} = req.body;
@@ -22,7 +24,6 @@ exports.autenticarUsuario = async (req, res, next)=>{
     
     if(!usuario){
         // si el usuario no exsiste
-
         await res.status(401).json({mensaje: 'Ese usuario no existe'});
         next();
     }else{
@@ -32,7 +33,7 @@ exports.autenticarUsuario = async (req, res, next)=>{
             await res.status(401).json({mensaje: 'Password incorrecto'});
             next();
         }else{
-            //si el password es correcto crear el token
+            //si el password es correcto firmar el token
             const token = jwt.sign({
                 email: usuario.email,
                 nombre: usuario.nombre,

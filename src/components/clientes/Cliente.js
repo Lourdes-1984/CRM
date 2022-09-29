@@ -37,7 +37,7 @@ function Cliente({cliente}) {
         <p className="nombre">{nombre} {apellido}</p>
         <p className="empresa">{empresa}</p>
         <p>{email}</p>
-        <p>{telefono}</p>
+        <p>Tel: {telefono}</p>
     </div>
     <div className="acciones">
         <Link to={`/clientes/editar/${_id}`} className="btn btn-azul">

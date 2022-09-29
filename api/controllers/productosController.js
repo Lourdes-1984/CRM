@@ -41,7 +41,7 @@ exports.nuevoProducto = async (req, res, next) => {
     const producto = new Productos(req.body);
 
     try {
-        if (req.file) {
+        if (req.file.filename) {
             producto.imagen = req.file.filename
         }
         await producto.save();
@@ -147,8 +147,9 @@ exports.eliminarProducto = async(req,res,next) =>{
     try {
         await Productos.findOneAndDelete({_id : req.params.idProducto});
         res.json({mensaje:'El producto se ha eliminado correctamente'})
-        console.log(error)
+        
     } catch (error) {
+        console.log(error)
         next()
     }
 }
