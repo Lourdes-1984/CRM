@@ -1,6 +1,7 @@
 import axios from 'axios';
+import { URL_BASE } from '../../constantes';
  const clienteAxios = axios.create({
-    baseURL : 'http://localhost:4000'
+    baseURL : URL_BASE
  })
 
 

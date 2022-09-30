@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import Swal from 'sweetalert2';
+import { URL_BASE } from '../../constantes';
 import clienteAxios from '../config/axios';
 
 function Producto({producto}) {
@@ -48,7 +49,7 @@ function Producto({producto}) {
                 <p className="precio">{descripcion}</p>
                 {
                 imagen ? (
-                    <img src={`http://localhost:4000/${imagen}`} alt= 'imagen'/>
+                    <img src={`${URL_BASE}/${imagen}`} alt= 'imagen'/>
                 ): null }
                
                 

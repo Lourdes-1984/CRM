@@ -2,6 +2,7 @@ import React, {Fragment, useState , useEffect}  from 'react';
 import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { URL_BASE } from '../../constantes';
  import clienteAxios from '../config/axios';
  import Spinner from '../layout/Spinner'
 
@@ -119,7 +120,7 @@ const leerArchivo = e =>{
 <div className="campo">
     <label>Imagen:</label>
     {imagen ? (
-      <img src= {`http://localhost:4000/${imagen}`} alt='imagen' width= '300' />
+      <img src= {`${URL_BASE}}/${imagen}`} alt='imagen' width= '300' />
     ) : null }
     <input type="file"  name="imagen" onChange={leerArchivo}/> 
 </div>
