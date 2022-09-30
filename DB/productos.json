@@ -1,0 +1,3 @@
+{"_id":{"$oid":"63330cf90e1f873d0f4a3ffb"},"nombre":"Camisa Git","precio":300,"descripcion":"Camisa Git color violeta","imagen":"eMDvicaUj.jpeg","__v":0}
+{"_id":{"$oid":"63347b185260826b058a47fb"},"nombre":"Camisa React.js","precio":400,"descripcion":"Camisa React.js color negro y logo azul","imagen":"aGq1kEQDZ.jpeg","__v":0}
+{"_id":{"$oid":"633585037f803a20bcf3d900"},"nombre":"Camisa JavaScript","precio":500,"descripcion":"Camisa JavaScript color amarillo","imagen":"HjakXO_1_.jpeg","__v":0}

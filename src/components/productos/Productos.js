@@ -28,16 +28,16 @@ function Productos() {
           const productosConsulta = await clienteAxios.get("/productos", {
             headers: {
               Authorization: `Bearer ${auth.token}`,
-            }
+            },
           });
           guardarProductos(productosConsulta.data);
         } catch (error) {
           //Error con autorizacion
-          if ((error.response.status = 500)) {
+          if (error.response.status === 500) {
             navigate("/iniciar-sesion");
           }
         }
-      }//llamar a la api
+      }; //llamar a la api
       consultarAPI();
     } else {
       //redireccionar
@@ -46,7 +46,6 @@ function Productos() {
         navigate("/iniciar-sesion");
       }, 1000);
     }
-    
   }, []);
 
   // Si el state esta como false

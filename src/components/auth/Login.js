@@ -94,6 +94,7 @@ function Login() {
                                 placeholder="Password para Iniciar Sesión"
                                 require
                                 onChange={leerDatos}
+                                
                             />
                         </div>
 
@@ -101,6 +102,7 @@ function Login() {
                             type="submit"
                             value="Iniciar Sesión "
                             className='btn btn-verde btn-block'
+                            
 
                         />
                     </form>

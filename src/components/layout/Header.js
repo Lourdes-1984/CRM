@@ -2,10 +2,12 @@ import React, {useContext} from 'react';
 import { CRMContext } from '../../context/CRMContext';
 import { useNavigate } from 'react-router-dom';
 
-
-export const Header = () => {
+const Header = () => {
 const [auth, guardarAuth] = useContext(CRMContext);
+
 const navigate = useNavigate();
+
+//CERRAR SESION
 const cerrarSesion = ()=>{
   guardarAuth({
     token: '',

@@ -13,7 +13,7 @@ const auth = require('../middleware/auth')
 module.exports = () => {
     //**CLIENTES */
 //agregar nuevo cliente por POST
-router.post('/clientes',  clienteController.nuevoCliente);
+router.post('/clientes', auth, clienteController.nuevoCliente);
 //obtener todos los clientes por GET
 router.get('/clientes',auth,  clienteController.mostrarClientes);
 //mostrar un cliente por su ID en especifico

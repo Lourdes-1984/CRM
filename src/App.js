@@ -19,7 +19,7 @@ import NuevoPedido from "./components/pedidos/NuevoPedido";
 //LOGIN
 import Login  from "./components/auth/Login";
 
-import {createContext, CRMContext, CRMProvider} from './context/CRMContext';
+import { CRMContext, CRMProvider} from './context/CRMContext';
 
 
 function App() {

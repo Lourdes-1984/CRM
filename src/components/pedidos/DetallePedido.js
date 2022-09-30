@@ -5,6 +5,7 @@ import Swal from 'sweetalert2';
 function DetallePedido(props) {
   const { cliente, pedido  } = props;
   const idPedido = pedido[0]._id;
+  
  //eliminar un pedido
  const eliminarPedido = id => {
   Swal.fire({

@@ -1,0 +1,3 @@
+{"_id":{"$oid":"63345c2df364bf42fe8b1647"},"nombre":"Juan Carlos","apellido":"Sosa","empresa":"Telecom","email":"juan@gmail.com","telefono":"999999995520","__v":0}
+{"_id":{"$oid":"6334ab0c5260826b058a4859"},"nombre":"Andres","apellido":"Velez","empresa":"Instagram","email":"andres@gmail.com","telefono":"04124567899","__v":0}
+{"_id":{"$oid":"633584337f803a20bcf3d8f6"},"nombre":"Maria","apellido":"Sosa","empresa":"Telecom","email":"maria@gmail.com","telefono":"3885403121456","__v":0}
