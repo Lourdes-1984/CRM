@@ -41,7 +41,7 @@ const whitelist = [process.env.FRONTEND_URL];
 app.use(express.json());
 
 // habilitar cors para aceptar petidiones de otras url
-app.use(cors(corsOptions));
+app.use(cors());
 
 // rutas del servidor
 app.use('/', routers());
