@@ -1,36 +1,33 @@
-import React, { Fragment, useEffect, useState, useContext } from "react";
-//importar cliente axios
+import React, { Fragment, useEffect,  useContext } from "react";
 import clienteAxios from "../config/axios";
 import { Link } from "react-router-dom";
 import Producto from "./Producto";
-import Spinner from "../layout/Spinner";
 import { useNavigate } from "react-router-dom";
-
-//importar en Context
 import { CRMContext } from "../../context/CRMContext";
 
 function Productos() {
   const navigate = useNavigate();
 
   //trabajar con el  state
-  //productos = state , guardarProductos = funcion para guardar el state
-  const [productos, guardarProductos] = useState([]);
 
   //utilizar valores del context
-  const [auth, guardarAuth] = useContext(CRMContext);
-
+  const [state,setState] = useContext(CRMContext);
+  const {productos}=state
   //useEffect para consultar la API cuando cargue
   useEffect(() => {
-    if (auth.token !== "") {
+    if (state.token !== "") {
       //query a la api
       const consultarAPI = async () => {
         try {
           const productosConsulta = await clienteAxios.get("/productos", {
             headers: {
-              Authorization: `Bearer ${auth.token}`,
+              Authorization: `Bearer ${state.token}`,
             },
           });
-          guardarProductos(productosConsulta.data);
+          setState({
+            ...state, 
+            productos: productosConsulta.data
+          });
         } catch (error) {
           //Error con autorizacion
           if (error.response.status === 500) {
@@ -49,7 +46,7 @@ function Productos() {
   }, []);
 
   // Si el state esta como false
-  if (!auth.auth) {
+  if (!state.isLogin) {
     navigate("/iniciar-sesion");
   }
 

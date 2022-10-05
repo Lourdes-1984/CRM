@@ -1,36 +1,32 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { Fragment, useContext, useEffect, useState } from "react";
-//importar cliente axios
+import React, { Fragment, useContext, useEffect } from "react";
 import clienteAxios from "../config/axios.js";
 import Cliente from "./Cliente";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-
-//importar en Context
 import { CRMContext } from "../../context/CRMContext";
 
 function Clientes() {
   const navigate = useNavigate();
-  //trabajar con el  state
-  //clientes = state guardarClientes = funcion para guardar el state
-  const [clientes, guardarClientes] = useState([]);
-
   //utilizar valores del context
-
-  const [ auth ] = useContext(CRMContext);
-
+  const [ state, setState ] = useContext(CRMContext);
+const {clientes} = state;
   useEffect(() => {
-    if(auth.token !== "") {
+    if(state.token !== "") {
       //query a la api
       const consultarAPI = async () => {
         try {
           const clientesConsulta = await clienteAxios.get("/clientes", {
             headers: {
-                Authorization: `Bearer ${auth.token}`,
+                Authorization: `Bearer ${state.token}`,
             }
           });
           //colocar el resultado en el state
-          guardarClientes(clientesConsulta.data);
+          setState({
+            ...state,
+            clientes: clientesConsulta.data,
+            isLogin: true,
+          });
         } catch (error) {
           //Error con autorizacion
            if(error.response.status === 500) {
@@ -49,7 +45,7 @@ function Clientes() {
   }, []);
 
   // Si el state esta como false
-  if (!auth.auth) {
+  if (!state.isLogin) {
     navigate("/iniciar-sesion");
   }
   //spinner de carga

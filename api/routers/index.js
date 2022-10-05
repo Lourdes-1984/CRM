@@ -7,15 +7,13 @@ const usuariosController = require('../controllers/usuariosControllers');
 
 //middle para proteger las rutas
 
-const auth = require('../middleware/auth')
-
 //-----------CRUD-------------------
 module.exports = () => {
     //**CLIENTES */
 //agregar nuevo cliente por POST
-router.post('/clientes', auth, clienteController.nuevoCliente);
+router.post('/clientes',  clienteController.nuevoCliente);
 //obtener todos los clientes por GET
-router.get('/clientes',auth,  clienteController.mostrarClientes);
+router.get('/clientes', clienteController.mostrarClientes);
 //mostrar un cliente por su ID en especifico
 router.get('/clientes/:idCliente',  clienteController.mostrarCliente);
 //actualizar cliente por PUT
@@ -39,7 +37,7 @@ router.post('/productos/busqueda/:query', productosController.buscarProducto);
 
 //**PEDIDOS */
 //agrega nuevo pedido
-router.post('/pedidos/nuevo/:idUsuario', pedidosController.nuevoPedido);
+router.post('/pedidos/nuevo/:idPedido', pedidosController.nuevoPedido);
 //mostrar todos los pedidos
 router.get('/pedidos', pedidosController.mostrarPedidos);
 //mostrar un pedido por su ID

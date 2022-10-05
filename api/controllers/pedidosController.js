@@ -24,12 +24,9 @@ exports.mostrarPedidos = async(req,res,next) =>{
         next()
     }
 };
-//Mostrar un pedido por su ID
+// 'pedido.producto','nombre' 
 exports.mostrarPedido = async(req,res,next)=>{
-    const pedido = await Pedidos.findById(req.params.idPedido).populate('cliente').populate({
-         path:'pedido.producto',
-            model:'Productos'
-    });
+    const pedido = await Pedidos.findById(req.params.idPedido).populate('cliente').populate('pedido.producto');
     if(!pedido){
         res.json({mensaje: 'Ese pedido no existe'});
         return next();
@@ -56,9 +53,11 @@ exports.actualizarPedido = async (req, res, next) => {
     }
 };
 exports.eliminarPedido = async (req, res, next) =>{
-
+    const id = req.params.idPedido;
+    console.log(id)
     try {
-        await Pedidos.findOneAndDelete({_id : req.params.idPedido});
+     await Pedidos.findOneAndDelete({_id : id});
+    //  const pedido = await Pedidos.findById({_id : id})
         res.json({mensaje:'El pedido se ha eliminado correctamente'})
     } catch (error) {
         console.log(error)

@@ -4,8 +4,8 @@ import { CRMContext } from '../../context/CRMContext';
 
 
 export const NavBar = () => {
-  const [auth, guardarAuth] = useContext(CRMContext);
-  if(!auth.auth) return null;
+  const [state] = useContext(CRMContext);
+  if(!state.isLogin) return null;
   return (
     <aside className="sidebar col-3">
       <h2>Administración</h2>

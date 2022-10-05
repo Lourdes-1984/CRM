@@ -1,16 +1,21 @@
-import React, { useEffect, useState, Fragment } from "react";
+import React, { useEffect, Fragment } from "react";
+import { useContext } from "react";
+import { CRMContext } from "../../context/CRMContext";
 import clienteAxios from "../config/axios";
 import DetallePedido from "./DetallePedido";
 
 function Pedidos() {
-  const [pedidos, guardarPedido] = useState([]);
+  const [state, setState] = useContext(CRMContext);
+  const {pedidos} = state;
   useEffect(() => {
     const consultarAPI = async () => {
       //obtener los pedidos
       const resultado = await clienteAxios.get("/pedidos");
-      guardarPedido(resultado.data);
+      setState({
+        ...state,
+        pedidos: resultado.data
+      });
     };
-    //llamar a la api
     consultarAPI();
   }, []); 
 
@@ -18,9 +23,12 @@ function Pedidos() {
     <Fragment>
       <h2>Pedidos</h2>
       <ul className="listado-pedidos">  
-        {pedidos.length ? pedidos.map((pedido) => (
-          <DetallePedido key={pedido._id} {...pedido} />
-        )) : <p>No hay pedidos</p>}
+        {pedidos.length ? pedidos.map((pedido) => {
+          console.log(pedido);
+          return(
+            <DetallePedido key={pedido._id} {...pedido} idPedido={pedido && pedido._id}/>
+          )
+        }) : <p>No hay pedidos</p>}
       </ul>
     </Fragment>
   );

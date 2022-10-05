@@ -3,15 +3,15 @@ import { CRMContext } from '../../context/CRMContext';
 import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
-const [auth, guardarAuth] = useContext(CRMContext);
+const [state, setState] = useContext(CRMContext);
 
 const navigate = useNavigate();
 
 //CERRAR SESION
 const cerrarSesion = ()=>{
-  guardarAuth({
+  setState({
     token: '',
-    auth: false
+    isLogin: false
   });
   localStorage.setItem('token', '');
 
@@ -26,7 +26,7 @@ const cerrarSesion = ()=>{
           <div className='contenido-barra'>
           <h1>CRM - Administrador de Clientes</h1>
 
-          {auth.auth ? (
+          {state.isLogin ? (
             <button type='button' className='btn btn-rojo'  onClick={cerrarSesion}> 
             <i className='far fa-times-circle'></i>
               Cerrar Sesión

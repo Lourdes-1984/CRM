@@ -8,7 +8,7 @@ import { CRMContext } from '../../context/CRMContext'
 function Login() {
 
     // AUTH Y TOKEN
-    const [auth, guardarAuth] = useContext(CRMContext);
+    const [state, setState] = useContext(CRMContext);
 
     const navigate = useNavigate();
 
@@ -23,13 +23,13 @@ function Login() {
             const respuesta = await clienteAxios.post('/iniciar-sesion', credenciales);
             //extraer el token y colocarlo en el localstorage
             const { token } = respuesta.data;
-            localStorage.setItem('token', token);
+          localStorage.setItem('token', token);
 
             //colocarlo en el state
-            guardarAuth({
-                ...auth,
-                token,
-                auth: true
+            setState({
+                ...state,
+                token: token,
+                isLogin: true
             })
 
             //alerta de inicio de sesion correcto

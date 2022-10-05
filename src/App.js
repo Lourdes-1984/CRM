@@ -24,11 +24,11 @@ import { CRMContext, CRMProvider} from './context/CRMContext';
 
 function App() {
   //utlizar context en el componente
-  const [auth, guardarAuth] = useContext(CRMContext);
+  const [state, setState] = useContext(CRMContext);
   return (
     <BrowserRouter>
       <>
-      <CRMProvider value={[auth,guardarAuth]}>
+      <CRMProvider value={[state,setState]}>
         <Header />
         <div className="grid contenedor contenido-principal">
           <NavBar />

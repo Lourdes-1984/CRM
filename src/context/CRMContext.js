@@ -5,13 +5,15 @@ const CRMContext = React.createContext([{}, () => {} ]);
 
 const CRMProvider = props => {
     //definir elñ state inicial
-
-    const [auth, guardarAuth] = useState({
+    const [state, setState] = useState({
+        clientes:[],
+        productos:[],
+        pedidos: [],
         token : '',
-        auth: false
+        isLogin: false
     });
     return(
-        <CRMContext.Provider value ={[auth,guardarAuth]}>
+        <CRMContext.Provider value ={[state,setState]}>
             {props.children}
         </CRMContext.Provider>
     );
