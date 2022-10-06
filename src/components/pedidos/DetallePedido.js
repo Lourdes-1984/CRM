@@ -1,8 +1,10 @@
 import React, { Fragment } from "react";
 import clienteAxios from "../config/axios";
+import { useNavigate } from 'react-router-dom';
 import Swal from "sweetalert2";
 
 function DetallePedido(props) {
+  const navigate = useNavigate();
   const { cliente, idPedido, pedido } = props;
   // const idPedido = pedido._id;
 
@@ -28,6 +30,7 @@ function DetallePedido(props) {
         });
       }
     });
+     navigate('/');
   };
   return (
     <Fragment>

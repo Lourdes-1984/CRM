@@ -61,7 +61,7 @@ function Productos() {
         Nuevo Producto
       </Link>
       <ul className="listado-productos">
-        {productos.map((producto) => (
+        {productos?.map((producto) => (
           <Producto key={producto._id} producto={producto} />
         ))}
       </ul>

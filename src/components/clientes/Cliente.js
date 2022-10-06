@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import Swal from 'sweetalert2';
 import clienteAxios from '../config/axios';
 
+
 function Cliente({cliente}) {
     //extraer los valores
     const {_id , nombre, apellido, empresa, email, telefono} = cliente;
@@ -29,8 +30,8 @@ function Cliente({cliente}) {
                   )
             })
         }
-      })
-   }
+      });
+   } 
   return (
     <li className="cliente">
     <div className="info-cliente">

@@ -1,11 +1,11 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2';
 import { URL_BASE } from '../../constantes';
 import clienteAxios from '../config/axios';
 
 function Producto({producto}) {
-
+    const navigate = useNavigate()
     //eliminar un producto
     const eliminarProducto = idProducto => {
         Swal.fire({
@@ -28,12 +28,19 @@ function Producto({producto}) {
                             res.data.mensaje,
                             'success'
                           )
+                          setTimeout(()=>{
+    
+                            //REDIRECCIONAR
+                            navigate('/');
+                          },1000)
                     }
                     
                 })
               
             }
-          })
+          }); 
+         
+
        }
     
 

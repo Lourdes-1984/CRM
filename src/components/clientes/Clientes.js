@@ -55,7 +55,7 @@ const {clientes} = state;
     <Fragment>
       <h2> Clientes</h2>
       <Link to={"/clientes/nuevo"} className="btn btn-verde nvo-cliente">
-        {" "}
+        
         <i className="fas fa-plus-circle"></i>
         Nuevo Cliente
       </Link>
