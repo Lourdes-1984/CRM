@@ -13,6 +13,10 @@ const pedidosSchema = new Schema ({
         },
         cantidad: Number
     }],
+    imagen:{
+        type:String
+    },
+
     total:{
         type:Number
     }

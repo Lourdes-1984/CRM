@@ -1,11 +1,12 @@
 import React, { Fragment } from "react";
 import clienteAxios from "../config/axios";
 import { useNavigate } from 'react-router-dom';
+import { URL_BASE } from '../../constantes';
 import Swal from "sweetalert2";
 
 function DetallePedido(props) {
   const navigate = useNavigate();
-  const { cliente, idPedido, pedido } = props;
+  const { cliente, idPedido, pedido ,imagen} = props;
   // const idPedido = pedido._id;
 
   //eliminar un pedido
@@ -34,7 +35,8 @@ function DetallePedido(props) {
   };
   return (
     <Fragment>
-      <ul className="listado-pedidos">
+      
+      <div className="card">
         <li className="pedido">
           <div className="info-pedido">
             <p className="id">ID: {idPedido}</p>
@@ -53,24 +55,34 @@ function DetallePedido(props) {
                         <p>{producto && producto.nombre}</p>
                         <p>Precio: ${producto && producto.precio}</p>
                         <p>Cantidad: {item.cantidad}</p>
+                        
+                        {
+                imagen ? (
+                    <img src={`${URL_BASE}/${producto && producto.imagen}`} alt= 'imagen' width= '100%'/>
+                ): null }
+               
                       </li>
                     );
                   })}
               </ul>
             </div>
             <p className="total">Total: ${props.total} </p>
-          </div>
-          <div className="acciones">
+            <div className="acciones">
             <button
               onClick={() => eliminarPedido(idPedido)}
               type="button"
               className="btn btn-rojo btn-eliminar"
             >
-              <i className="fas fa-times"></i> Eliminar Pedido
+            <i class="fa-solid fa-trash"></i> Eliminar Pedido
             </button>
           </div>
+            </div>
+         
+         
         </li>
-      </ul>
+      </div>
+  
+    
     </Fragment>
   );
 }

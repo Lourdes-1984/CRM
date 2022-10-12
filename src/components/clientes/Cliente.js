@@ -33,11 +33,11 @@ function Cliente({cliente}) {
       });
    } 
   return (
-    <li className="cliente">
-    <div className="info-cliente">
-        <p className="nombre">{nombre} {apellido}</p>
-        <p className="empresa">{empresa}</p>
-        <p>{email}</p>
+    <div className="card">
+    <div className="">
+        <p className="nombre">Nombre: {nombre} {apellido}</p>
+        <p className="empresa">Empresa: {empresa}</p>
+        <p>Email: {email}</p>
         <p>Tel: {telefono}</p>
     </div>
     <div className="acciones">
@@ -54,7 +54,7 @@ function Cliente({cliente}) {
             Eliminar Cliente
         </button>
     </div>
-</li>
+</div>
 
   )
 }

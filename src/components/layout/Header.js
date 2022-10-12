@@ -24,6 +24,7 @@ const cerrarSesion = ()=>{
     <header className='barra'>
         <div className='contenedor'>
           <div className='contenido-barra'>
+          {/* <i class="fa-solid fa-handshake"></i> */}
           <h1>CRM - Administrador de Clientes</h1>
 
           {state.isLogin ? (

@@ -77,18 +77,21 @@ function Login() {
                 <div className='contenedor-formulario'>
                     <form onSubmit={iniciarSesion}>
                         <div className='campo'>
+                        <i class="fa-solid fa-envelope"></i>
                             <label>Email</label>
                             <input
                                 type="text"
                                 name="email"
-                                placeholder="Email para Iniciar Sesión"
+                                placeholder="Email para Iniciar Sesión "
                                 require
                                 onChange={leerDatos}
                             />
                         </div>
                         <div className='campo'>
+                        <i class="fa-solid fa-lock"></i>
                             <label>Password</label>
-                            <input
+                            <input 
+                           
                                 type="password"
                                 name="password"
                                 placeholder="Password para Iniciar Sesión"
@@ -99,9 +102,10 @@ function Login() {
                         </div>
 
                         <input
+                            placeholder='Iniciar Sesión'
                             type="submit"
                             value="Iniciar Sesión "
-                            className='btn btn-verde btn-block'
+                            className='btn btn-amarillo btn-block '
                             
 
                         />

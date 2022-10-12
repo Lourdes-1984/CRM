@@ -5,6 +5,7 @@ import Cliente from "./Cliente";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { CRMContext } from "../../context/CRMContext";
+import Card from "../Card/Card.js";
 
 function Clientes() {
   const navigate = useNavigate();
@@ -53,18 +54,20 @@ const {clientes} = state;
   //if (!clientes.length) return <p> NO hay clientes</p>;
   return (
     <Fragment>
-      <h2> Clientes</h2>
-      <Link to={"/clientes/nuevo"} className="btn btn-verde nvo-cliente">
+      <h2 className="clientesh2"> Clientes</h2>
+      <Link to={"/clientes/nuevo"} className="btn btn-verde nvo-cliente" >
         
         <i className="fas fa-plus-circle"></i>
+      
         Nuevo Cliente
       </Link>
-      <ul className="listado-clientes">
+     
+      <section className="container-cliente">
         {clientes &&
           clientes.map((cliente) => (
             <Cliente key={cliente._id} cliente={cliente} />
           ))}
-      </ul>
+      </section>
     </Fragment>
   );
 }

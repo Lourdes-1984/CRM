@@ -3,11 +3,13 @@
     --fontHeading: 'Staatliches', cursive;
 
     /** Colores **/
-    --azul : #12f1c4;
-    --rojo : #A01C48;
+    --azul : #5884eaff;
+    --rojo : #f11e3c;
     --naranja : #FFF8DC;
-    --amarillo: #ECA400;
-    --verde : rgb(102, 222, 102);
+    --amarillo: #d6e144;
+    --verde :#19cca3ff;
+    --negro : #2C3E50;
+    --negro2:#34495e;
 
     /** gris **/
     --gris: #969696;
@@ -27,6 +29,23 @@ html {
 *, *:before, *:after {
     box-sizing: inherit;
 }
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 40%;
+    margin-bottom: 5px;
+    padding: 2px 16px;
+    border-radius: 10px;
+    background-color: #f0f8ff66;
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  .container {
+    padding: 2px 16px;
+  }
 a {
     font-family: var(--fontTexto);
     color: black;
@@ -40,6 +59,9 @@ h2 {
     font-family: var(--fontTexto);
     color: var(--grisOscuro);
     font-size: 3rem;
+}
+ .clientesh2{
+    margin-left: 47px;
 }
 .contenedor {
     max-width: 1400px;
@@ -62,6 +84,7 @@ h2 {
     display: block;
     font-family: var(--fontTexto);
     border: none;
+    border-radius: 10px;
     flex: 0 0 100%;
     width: 100%;
 }
@@ -88,10 +111,10 @@ h2 {
     background-color: var(--naranja);
 }
 .btn-amarillo {
-    background-color: var(--amarillo);
+    background-color: var(--negro2);
 }
 .btn-verde {
-    background-color: var(--verde);
+    background-color: var(--negro);
 }
 .btn:disabled {
     opacity: .4;
@@ -99,11 +122,12 @@ h2 {
 .nvo-cliente {
     padding: 2rem 4rem;
     width: auto;
+    margin-left: 47px;
 }
 .btn-eliminar {
     margin-top: 1rem;
     font-family: "Font Awesome 5 Free", Arial, Helvetica, sans-serif; 
-    font-weight: 900; 
+    font-weight: 700; 
 }
 /** GRID **/
 @media (min-width: 768px) {
@@ -119,8 +143,16 @@ h2 {
     }
 }
 .barra {
-    background-color: var(--azul);
+    background-color: var(--negro);
     padding: 2rem 0;
+}
+.barra::before {
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900; 
+    font-size: 40px;
+    content: "\f2b5";
+    color: var(--grisClaro);
+    margin-left: 35px;
 }
 .barra h1 {
     margin:0;
@@ -201,6 +233,8 @@ h2 {
     background-color: white;
     padding: 2rem 3rem;
     min-height: 80rem;
+    margin: auto;
+    max-width: 1000px;
     -webkit-box-shadow: 0px 7px 6px -5px rgba(0,0,0,0.36);
     -moz-box-shadow: 0px 7px 6px -5px rgba(0,0,0,0.36);
     box-shadow: 0px 7px 6px -5px rgba(0,0,0,0.36);
@@ -213,6 +247,38 @@ h2 {
 .listado-pedidos {
     list-style: none;
     padding: 0;
+    width: 90%;
+    margin: auto;
+}
+.container-cliente{
+    list-style: none;
+    padding: 0;
+    width: 90%;
+    display: flex;
+    flex-wrap:wrap  ;
+    justify-content: space-between;
+    margin: auto;
+    margin-top:2rem;
+}
+.container-producto{
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-wrap:wrap  ;
+    justify-content: space-between;
+    margin: auto;
+    margin-top:2rem;
+}
+.container-pedido{
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-wrap:wrap  ;
+    justify-content: space-between;
+    margin: auto;
+    margin-top:2rem;
 }
 .cliente,
 .producto,
@@ -339,6 +405,7 @@ form .campo {
 form .campo label {
     font-weight: bold;
     font-family: var(--fontTexto);
+    color: var(--grisClaro);
     flex: 0 0 100px;
 }
 form .campo input:not([type="submit"]){
@@ -442,12 +509,21 @@ h3.resumen-titulo {
     max-width: 520px;
     margin: 15rem  auto 0 auto;
     padding: 4rem 2rem;
-    background-color: var(--azul);
+    background-color: var(--negro);
     border-radius: 1.5rem;
 }
 .login h2 {
     text-align: center;
+    color: #fff;
 }
 .login .contenedor-formulario {
 
+}
+.fa-envelope{
+    color: white;
+    margin-right: 5px;
+}
+.fa-lock{
+    color: white;
+    margin-right: 5px;
 }

@@ -45,18 +45,18 @@ function Producto({producto}) {
     
 
     //extraer los valores
-    const {_id , nombre, precio,descripcion, imagen, } = producto;
+    const {_id , nombre, precio,descripcion, imagen } = producto;
    
     return(
 
-    <li className="producto">
+    <div className="card">
             <div className="info-producto">
                 <p className="nombre">{nombre}</p>
                 <p className="precio">${precio}</p>
                 <p className="precio">{descripcion}</p>
                 {
                 imagen ? (
-                    <img src={`${URL_BASE}/${imagen}`} alt= 'imagen'/>
+                    <img src={`${URL_BASE}/${imagen}`} alt= 'imagen' width= '100%'/>
                 ): null }
                
                 
@@ -71,7 +71,7 @@ function Producto({producto}) {
                     Eliminar producto
                 </button>
             </div>
-        </li>
+        </div>
   )
 }
 

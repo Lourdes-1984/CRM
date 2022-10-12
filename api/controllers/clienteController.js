@@ -8,7 +8,7 @@ exports.nuevoCliente = async (req,res, next) =>{
        //almacena el registro
        await cliente.save()
        res.json({
-           mensaje:'Se agrego nuevo cliente'
+           mensaje:'Se agrego nuevo cliente',cliente
        })
    } catch (error) {
        //si hay un error,console.log y next
