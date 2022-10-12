@@ -19,6 +19,9 @@ export const NavBar = () => {
         <Link to={"/pedidos"} className="pedidos">
          Pedidos
         </Link>
+        <Link to={"/crear-cuenta"} className="usuarios">
+         Registrar Usuario
+        </Link>
       </nav>
     </aside>
   );

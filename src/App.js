@@ -20,6 +20,7 @@ import NuevoPedido from "./components/pedidos/NuevoPedido";
 import Login  from "./components/auth/Login";
 
 import { CRMContext, CRMProvider} from './context/CRMContext';
+import FormularioRegistro from "./components/usuario/FormularioRegistro";
 
 
 function App() {
@@ -46,6 +47,7 @@ function App() {
                 <Route exact path="/pedidos/nuevo/:id" element={<NuevoPedido/>} />
 
                 <Route exact path="/iniciar-sesion" element={<Login/>}/>
+                <Route exact path="/crear-cuenta" element={<FormularioRegistro/>}/>
 
             </Routes>
           </main>
