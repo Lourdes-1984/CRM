@@ -31,7 +31,7 @@ const FormularioRegistro = () => {
         Swal.fire("Registro Exitoso", "Has registrado un nuevo usuario", "success");
         //redireccionar
         setTimeout(() => {
-          navigate("/");
+          navigate("/iniciar-sesion");
         }, 1000);
       }
        catch (error) {
