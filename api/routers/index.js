@@ -50,6 +50,8 @@ router.delete('/pedidos/:idPedido', pedidosController.eliminarPedido);
 //**USUARIOS */
 //agregar un usuario
 router.post('/crear-cuenta', usuariosController.registrarUsuario);
+router.get('/usuarios', usuariosController.obtenerUsuario);
+
 //inicio de sesion
 router.post('/iniciar-sesion',usuariosController.autenticarUsuario)
 

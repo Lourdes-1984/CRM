@@ -16,6 +16,10 @@ exports.registrarUsuario = async (req,res)=>{
     }
 
 }
+exports.obtenerUsuario = async (req,res,next) =>{
+    const usuarios = await Usuarios.find();
+    res.json({mensaje: 'consulta existosa', usuarios})
+}
 //AUTENTICAR UN USURAIO
 exports.autenticarUsuario = async (req, res, next)=>{
     //buscar el usuario

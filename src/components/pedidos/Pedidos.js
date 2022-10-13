@@ -24,7 +24,7 @@ function Pedidos() {
       <h2>Pedidos</h2>
       <section className="container-pedido">  
         {pedidos.length ? pedidos.map((pedido) => {
-          console.log(pedido);
+          // console.log(pedido);
           return(
             <DetallePedido key={pedido._id} {...pedido} idPedido={pedido && pedido._id}/>
           )

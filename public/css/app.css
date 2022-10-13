@@ -410,7 +410,7 @@ form .campo {
 form .campo label {
     font-weight: bold;
     font-family: var(--fontTexto);
-    color: var(--grisClaro);
+    color: var(--grisOscuro);
     flex: 0 0 100px;
 }
 form .campo input:not([type="submit"]){
@@ -517,12 +517,13 @@ h3.resumen-titulo {
     background-color: var(--negro);
     border-radius: 1.5rem;
 }
-.login h2 {
+.login h2{
     text-align: center;
     color: #fff;
 }
-.login .contenedor-formulario {
 
+.login .contenedor-formulario label{
+    color: #fff;
 }
 .fa-envelope{
     color: white;

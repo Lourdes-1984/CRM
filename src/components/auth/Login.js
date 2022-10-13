@@ -68,8 +68,6 @@ function Login() {
             [e.target.name]: e.target.value
         })
     }
-
-
     return (
         <Fragment>
             <div className='login'>
@@ -97,7 +95,6 @@ function Login() {
                                 placeholder="Password para Iniciar Sesión"
                                 require
                                 onChange={leerDatos}
-                                
                             />
                         </div>
 
@@ -106,14 +103,11 @@ function Login() {
                             type="submit"
                             value="Iniciar Sesión "
                             className='btn btn-amarillo btn-block '
-                            
-
                         />
                     </form>
                 </div>
             </div>
         </Fragment>
-
     )
 };
 

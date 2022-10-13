@@ -12,6 +12,7 @@ const CRMProvider = props => {
         clientes:[],
         productos:[],
         pedidos: [],
+        usuarios: [],
         token : '',
         isLogin: false
     });
@@ -35,6 +36,7 @@ const CRMProvider = props => {
        }
         }
       }
+   
    
     return(
         <CRMContext.Provider value ={[state,setState,obtenerClientes]}>
