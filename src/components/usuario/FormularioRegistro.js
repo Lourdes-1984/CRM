@@ -1,6 +1,4 @@
 import React, { Fragment, useState } from "react";
-import { useContext } from "react";
-import { CRMContext } from "../../context/CRMContext";
 import clienteAxios from "../config/axios";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";

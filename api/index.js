@@ -21,26 +21,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-//Definir un dominio(s) para reciobir peticiones
-const whitelist = [process.env.FRONTEND_URL];
-  const corsOptions = {
-     origin: (origin , callback)=>{
-         //revisar si la peticion viene de un servisor que esta en whitelist
-         const existe = whitelist.some(dominio => {
-            console.log(dominio);
-            return(dominio === origin)
-         });     
-          if(existe){
-              callback(null ,true);
-         }else{
-              callback(new Error('No permitido por CORS'));
-          }
-
-      }
-  }
-
 app.use(express.json());
-
 // habilitar cors para aceptar petidiones de otras url
 app.use(cors());
 
@@ -50,10 +31,9 @@ app.use('/', routers());
 //carpeta publica
 app.use(express.static('uploads'));
 
-const host = process.env.HOST || '0.0.0.0';
 const port = process.env.PORT || 4000;
 
 //iniciar aoo
-app.listen(port, host, () => {
+app.listen(port, () => {
     console.log(`servidor corriendo en el puerto: ${port}`);
 })
