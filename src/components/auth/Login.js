@@ -23,13 +23,13 @@ function Login() {
             const respuesta = await clienteAxios.post('/iniciar-sesion', credenciales);
             console.log(respuesta)
             //extraer el token y colocarlo en el localstorage
-            const { token , nombreUsuario } = respuesta.data;
+            const { token , nombre } = respuesta.data;
           localStorage.setItem('token', token);
 
             //colocarlo en el state
             setState({
                 ...state,
-                nombre:nombreUsuario,
+                nombre:nombre,
                 token: token,
                 isLogin: true
             })
