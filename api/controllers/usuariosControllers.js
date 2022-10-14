@@ -29,7 +29,7 @@ exports.autenticarUsuario = async (req, res, next)=>{
     //buscar el usuario
     const{email,password} = req.body;
     const usuario = await Usuarios.findOne({email});
-    
+    const nombreUsuario = usuario.nombre
     if(!usuario){
         // si el usuario no exsiste
         await res.status(401).json({mensaje: 'Ese usuario no existe'});
@@ -53,7 +53,7 @@ exports.autenticarUsuario = async (req, res, next)=>{
             }
             );
             //retornar el token
-            res.json({token})
+            res.json({token ,nombreUsuario})
         }
 
     }

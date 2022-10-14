@@ -21,13 +21,15 @@ function Login() {
         //autenticar el usuario
         try {
             const respuesta = await clienteAxios.post('/iniciar-sesion', credenciales);
+            console.log(respuesta)
             //extraer el token y colocarlo en el localstorage
-            const { token } = respuesta.data;
+            const { token , nombreUsuario } = respuesta.data;
           localStorage.setItem('token', token);
 
             //colocarlo en el state
             setState({
                 ...state,
+                nombre:nombreUsuario,
                 token: token,
                 isLogin: true
             })

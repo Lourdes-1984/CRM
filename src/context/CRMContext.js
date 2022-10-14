@@ -9,6 +9,7 @@ const CRMProvider = props => {
     const navigate = useNavigate();
     //definir elñ state inicial
     const [state, setState] = useState({
+        nombre :'',
         clientes:[],
         productos:[],
         pedidos: [],

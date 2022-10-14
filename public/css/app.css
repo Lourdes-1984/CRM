@@ -151,8 +151,21 @@ h2 {
     font-weight: 900; 
     font-size: 40px;
     content: "\f2b5";
+    content: "\f2b5";
+
     color: var(--grisClaro);
     margin-left: 35px;
+}
+.usuario{
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+    
+}
+.usuario p , i{
+    color: #fff;
+    font-size: 20px;
 }
 .barra h1 {
     margin:0;

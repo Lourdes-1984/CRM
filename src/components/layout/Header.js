@@ -6,7 +6,7 @@ const Header = () => {
 const [state, setState] = useContext(CRMContext);
 
 const navigate = useNavigate();
-
+console.log(state)
 //CERRAR SESION
 const cerrarSesion = ()=>{
   setState({
@@ -26,13 +26,18 @@ const cerrarSesion = ()=>{
           <div className='contenido-barra'>
           {/* <i class="fa-solid fa-handshake"></i> */}
           <h1>CRM - Administrador de Clientes</h1>
-
-          {state.isLogin ? (
-            <button type='button' className='btn btn-rojo'  onClick={cerrarSesion}> 
-            <i className='far fa-times-circle'></i>
-              Cerrar Sesión
-            </button>
-          ): null}
+            <div className='usuario'>
+            <i class="fa-solid fa-circle-user"></i>
+            <p >{state.nombre}</p>
+            </div>
+          
+            {state.isLogin ? (
+          <button type='button' className='btn btn-rojo'  onClick={cerrarSesion}> 
+        <i className='far fa-times-circle'></i>
+          Cerrar Sesión
+        </button>
+        
+      ): null}
 
           </div>
             
