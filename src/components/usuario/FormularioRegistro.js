@@ -25,15 +25,14 @@ const FormularioRegistro = () => {
     const registrarUsuarios = async (datos) => {
       try {
         await clienteAxios.post("/crear-cuenta", datos);
-        console.log("usuario creado", datos);
-        Swal.fire("Registro Exitoso", "Has registrado un nuevo usuario", "success");
-        //redireccionar
-        setTimeout(() => {
-          navigate("/iniciar-sesion");
-        }, 1000);
+         console.log("usuario creado", datos);
+         Swal.fire("Registro Exitoso", "Has registrado un nuevo usuario", "success");
+         //redireccionar
+         setTimeout(() => {
+           navigate("/");
+         }, 1000);
       }
        catch (error) {
-        console.log(error)
         if(error.response){
           Swal.fire({
               type: 'error',

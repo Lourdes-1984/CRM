@@ -3,13 +3,17 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 
 //CREAR UN USUARIO
-exports.registrarUsuario = async (req,res)=>{
+exports.registrarUsuarios = async (req,res,next)=>{
     //leeer los datos del usuario y colocarlo  en usuarios
+    const usuarioDB = await Usuarios.find({email:req.body.email});
     const usuario = new Usuarios(req.body);
     usuario.password = await bcrypt.hash(req.body.password, 12);
     try {
-        await usuario.save();
-        res.json({mensaje:'Usuario creado correctamente'})
+         if(usuarioDB.length){
+         return res.status(404).json({mensaje:'Usuario ya existe', usuarioDB})
+     }
+     await usuario.save();
+     res.json({mensaje:'Usuario creado correctamente', usuario})
     } catch (error) {
         console.log(error);
         res.json({mensaje:'Hubo un error'})

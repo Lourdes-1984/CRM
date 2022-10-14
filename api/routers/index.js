@@ -49,7 +49,7 @@ router.delete('/pedidos/:idPedido', pedidosController.eliminarPedido);
 
 //**USUARIOS */
 //agregar un usuario
-router.post('/crear-cuenta', usuariosController.registrarUsuario);
+router.post('/crear-cuenta', usuariosController.registrarUsuarios);
 router.get('/usuarios', usuariosController.obtenerUsuario);
 
 //inicio de sesion
