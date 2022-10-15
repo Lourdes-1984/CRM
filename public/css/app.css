@@ -32,12 +32,21 @@ html {
 .card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
-    /* width: 40%; */
+    max-width: 250px;
     margin-bottom: 5px;
     padding: 2px 16px;
     border-radius: 10px;
     background-color: #f0f8ff66;
   }
+  .card2 {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    margin-bottom: 5px;
+    padding: 2px 16px;
+    border-radius: 10px;
+    background-color: #f0f8ff66;
+  }
+  
   
   .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
@@ -76,17 +85,16 @@ h2 {
     width: 100%!important;
 }
 .btn {
-    padding:  1.5rem;
+    padding:  1rem;
     text-align: center;
     color: white;
     font-weight: 700;
     text-transform: uppercase;
-    display: block;
     font-family: var(--fontTexto);
     border: none;
     border-radius: 10px;
     flex: 0 0 100%;
-    width: 100%;
+    width: 90%;
 }
 .btn:hover {
     cursor: pointer;
@@ -122,11 +130,9 @@ h2 {
 .nvo-cliente {
     padding: 2rem 4rem;
     width: auto;
-    margin-left: 47px;
 }
 .btn-eliminar {
     margin-top: 1rem;
-    font-family: "Font Awesome 5 Free", Arial, Helvetica, sans-serif; 
     font-weight: 700; 
 }
 /** GRID **/
@@ -292,9 +298,9 @@ h2 {
     list-style: none;
     padding: 0;
     width: 100%;
-    display: flex;
+    /* display: flex;
     flex-wrap:wrap  ;
-    justify-content: space-between;
+    justify-content: space-between; */
     margin: auto;
     margin-top:2rem;
 }

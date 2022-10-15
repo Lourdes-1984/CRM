@@ -36,8 +36,7 @@ function DetallePedido(props) {
   return (
     <Fragment>
       
-      <div className="card">
-        <li className="pedido">
+      <div className="card2">
           <div className="info-pedido">
             <p className="id">ID: {idPedido}</p>
             <p className="nombre">
@@ -79,7 +78,7 @@ function DetallePedido(props) {
             </div>
          
          
-        </li>
+        
       </div>
   
     
