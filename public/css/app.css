@@ -304,6 +304,10 @@ h2 {
     margin: auto;
     margin-top:2rem;
 }
+.lista{
+    display: flex;
+    justify-content: space-between;
+}
 .cliente,
 .producto,
 .pedido,

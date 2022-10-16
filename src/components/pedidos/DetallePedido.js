@@ -45,7 +45,7 @@ function DetallePedido(props) {
             </p>
             <div className="articulos-pedido">
               <p className="productos">Artículos Pedido: </p>
-              <ul>
+              <ul className="lista">
                 {pedido &&
                   pedido?.map((item) => {
                     const { producto } = item;
