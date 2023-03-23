@@ -1,4 +1,5 @@
 # Aplicación CRM
+![vista de la app](vista.png)
 
 ## Descripción
 
@@ -19,5 +20,5 @@
 
 * En el archivo `.ENV`  encontrara el ejemplo de como  debe llamarse la variable a utilizar.
 
-![logo react](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png )
 
+![log react](react.png)
